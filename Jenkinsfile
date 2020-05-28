@@ -7,16 +7,14 @@ pipeline {
                 echo 'ssh ansible@192.168.1.96'
             }
         }
-        stage('Check the syntax of playbook') {
+        stage('Check the version of Ansible') {
             steps {
-                echo 'sudo ansible-playbook /root/ansible_101/update.yaml --syntax-check'
+                script {
+                    variable = 'vova'
+                }
+                echo "${variable}"
+
             }
         }
-        stage('Run playbook') {
-            steps {
-                echo 'sudo ansible-playbook /root/ansible_101/update.yaml -i /root/ansible_101/devhosts'
-            }
-        }
-        
         }
     }
