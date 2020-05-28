@@ -12,13 +12,13 @@ pipeline {
                 script {
                     version = 'ansible 2.9.8'
                 }
-                sh ```
+                sh '''
                 if [[ $(ansible --version | head -n 1) = $version ]]; then
                   exit 0
                 else
                   exit 1
                 fi
-                ```
+                '''
             }
         }
     }
