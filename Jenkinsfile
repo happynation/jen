@@ -10,11 +10,14 @@ pipeline {
         stage('Check the version of Ansible') {
             steps {
                 script {
-                    variable = 'vova'
+                    version = 'ansible 2.9.8'
                 }
-                echo "${variable}"
-
+                if [[ $(ansible --version | head -n 1) = $version ]]; then
+                  exit 0
+                else
+                  exit 1
+                fi
             }
         }
-        }
     }
+}
