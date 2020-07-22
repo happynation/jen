@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('ssh to ansible server') {
             steps {
-                echo 'ssh -t ansible@192.168.1.96'
+                echo 'Hello World'
             }
         }
         stage('Check the version of Ansible') {
