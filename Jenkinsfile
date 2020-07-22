@@ -10,7 +10,7 @@ pipeline {
         stage('Check the version of Ansible') {
             steps {
                 script {
-                    version = 'ansible 2.9.9'
+                    version = 'ansible 2.6.9'
                 }
                 sh '''
                 if [ $(sudo ansible --version | head -n 1) == $version ]; then
